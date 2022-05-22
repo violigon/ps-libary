@@ -7,4 +7,6 @@ import { PrismaModule } from '../prisma/prisma.module';
   controllers: [GameController],
   providers: [GameService],
 })
-export class GameModule {}
+export class GameModule {
+  constructor(private readonly gameService: GameService) {}
+}
