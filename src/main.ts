@@ -9,15 +9,17 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-  .setTitle('PSLibary')
-  .setDescription('Aplicação da biblioteca Playstation')
-  .setVersion('1.0.0')
-  .addTag('status')
-  .addTag('game')
-  .build();
+    .setTitle('PSLibary')
+    .setDescription('Aplicação da biblioteca Playstation')
+    .setVersion('1.0.0')
+    .addTag('status')
+    .addTag('game')
+    .addTag('genre')
+    .addTag('user')
+    .build();
 
-const document = SwaggerModule.createDocument(app, config);
-SwaggerModule.setup('api', app, document);
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
 
   await app.listen(3331);
 }

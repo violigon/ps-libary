@@ -1,11 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class CreateGenreDto {
-  @IsNotEmpty()
+  @IsString()
   @ApiProperty({
     description: 'Nome do gênero',
-    example: "Ação",
+    example: 'Ação',
   })
   name: string;
   genero: string;

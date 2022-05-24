@@ -21,7 +21,7 @@ export class GenreController {
 
   @Get()
   @ApiOperation({
-    summary: 'Listar todos os jogos',
+    summary: 'Listar todos os gêneros',
   })
   findAll(): Promise<Genre[]> {
     return this.genreService.findAll();
@@ -29,7 +29,7 @@ export class GenreController {
 
   @Get(':id')
   @ApiOperation({
-    summary: 'Visualizar Jogo',
+    summary: 'Visualizar gêneros',
   })
   findOne(@Param('id') id: string): Promise<Genre> {
     return this.genreService.findById(id);
@@ -37,7 +37,7 @@ export class GenreController {
 
   @Post()
   @ApiOperation({
-    summary: 'Criar um jogo',
+    summary: 'Criar um gênero',
   })
   create(@Body() dto: CreateGenreDto): Promise<Genre> {
     return this.genreService.create(dto);
